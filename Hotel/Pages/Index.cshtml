@@ -78,61 +78,18 @@
             <h1 class="mb-5">Our Services</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-hotel fa-2x text-success mb-4"></i>
-                        <h5>Rooms & Apartments</h5>
-                        <p>Stylish comfort awaits in our rooms and apartments — modern retreats designed for an unforgettable stay.</p><br />
+            @for (int i = 0; i < @Model.Table1.Rows.Count; i++)
+            {
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-@Model.Table1.Rows[i][5] fa-2x text-success mb-4"></i>
+                            <h5>@Model.Table1.Rows[i][1]</h5>
+                            <p>@Model.Table1.Rows[i][2]</p><br />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-utensils text-success mb-4"></i>
-                        <h5>Food & Restaurant:</h5>
-                        <p>Indulge in culinary excellence at our restaurant, where each dish is a masterpiece, and every meal is an experience.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-spa text-success mb-4"></i>
-                        <h5>Spa & Fitness</h5>
-                        <p>Discover tranquility in our spa and energize at our fitness center — a perfect blend of relaxation and rejuvenation.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-swimmer text-success mb-4"></i>
-                        <h5>Sports & Gaming</h5>
-                        <p>Thrill-seekers, rejoice! Experience adrenaline highs in our sports and gaming arena for non-stop excitement.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-glass-cheers text-success mb-4"></i>
-                        <h5>Events & Party</h5>
-                        <p>Celebrate life's moments with us. Our versatile event spaces set the scene for unforgettable gatherings and parties.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-dumbbell text-success mb-4"></i>
-                        <h5>GYM & Yoga</h5>
-                        <p>Elevate your well-being in our fitness haven. From invigorating workouts to serene yoga, find balance and vitality here.</p>
-                    </div>
-                </div>
-            </div>
-            
+            }
         </div>
     </div>
 </div>
@@ -142,107 +99,49 @@
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-success px-3">Rooms</h6>
-            <h1 class="mb-5">Our Rooms</h1>
+            <h1 class="mb-5">Some Of Our Rooms</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/room-1.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$70/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Junior Suite</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="room-item shadow rounded overflow-hidden">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="css/img/@Model.Table2.Rows[i][6]" alt="">
+                            <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$@Model.Table2.Rows[i][2]/Night</small>
+                        </div>
+                        <div class="p-4 mt-2">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="mb-0">@Model.Table2.Rows[i][1]</h5>
+                                <div class="ps-2">
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>2 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">A spacious and elegant room designed for comfort and relaxation. Features a king-sized bed,
-                            a luxurious bathroom, and a city view.</p><br />
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
+                            <div class="d-flex mb-3">
+                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>@Model.Table2.Rows[i][4] Bed</small>
+                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>@Model.Table2.Rows[i][5] Bath</small>
+                                <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
+                            </div>
+                            <p class="text-body mb-3">
+                                @Model.Table2.Rows[i][3]
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
+                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/room-2.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Executive Suite</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>2 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">Experience luxury in our Executive Suite. This room offers three beds, two baths,
-                            and complimentary Wi-Fi. Enjoy a five-star stay with top-notch amenities.</p>
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/room-3.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$150/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Super Deluxe</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>2 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">Indulge in our Super Deluxe room, boasting three comfortable beds, two baths, and seamless Wi-Fi connectivity. 
-                            Enjoy a stylish stay with a touch of sophistication.</p>
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
+            
         </div>
-        <div class="text-center">
-            <a class="btn btn-success py-3 px-5 mt-4 mx-auto" href="roomtype">Show More Room</a>
-        </div>
+        
     </div>
+    
 </div>
 <!-- Room End -->
 
@@ -562,35 +461,21 @@
             <h1 class="mb-5">Our Clients Say!!!</h1>
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                <h5 class="mb-0">Emily Johnson</h5>
-                <p>New York, USA</p>
-                <p class="mb-0">Our recent stay at the hotel was a perfect blend of comfort and luxury. The well-appointed rooms, delicious dining options, 
-                    and friendly staff contributed to a relaxing and enjoyable getaway. We can't wait to revisit!</p>
-            </div>
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                <h5 class="mb-0">Adam Mostafa</h5>
-                <p>Cairo, Egypt</p>
-                <p class="mt-2 mb-0">The hotel's staff went above and beyond to make our stay memorable. The personalized service, combined with the 
-                    luxurious accommodations, created a truly unforgettable experience. Thank you for making our visit special.</p>
-            </div>
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                <h5 class="mb-0">Tom Hanks</h5>
-                <p>Los Angeles, USA</p>
-                <p class="mt-2 mb-0">The hotel's attention to detail and commitment to guest satisfaction are truly commendable. 
-                    From the welcoming ambiance to the top-notch amenities, our stay was delightful. We look forward to returning in the future.</p>
-            </div>
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                <h5 class="mb-0">Marilyn Monroe</h5>
-                <p>Moscow, Russia</p>
-                <p class="mt-2 mb-0">Our stay at the hotel exceeded all expectations. The rooms were impeccably clean, the staff was incredibly 
-                    courteous, and the overall experience was nothing short of exceptional. Highly recommended!</p>
-            </div>
+            @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+            {
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/im.png" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">@Model.Table.Rows[i][0]</h5>
+                    <p>@Model.Table.Rows[i][1]</p>
+                    <p>@Model.Table.Rows[i][2]</p>
+                    <p>Rate: @Model.Table.Rows[i][4] <small class="fa fa-star"></small></p>
+                    <p class="mb-0">
+                        @Model.Table.Rows[i][3]
+                    </p>
+                </div>
+            }
         </div>
+
     </div>
 </div>
 <!-- Testimonial End -->
