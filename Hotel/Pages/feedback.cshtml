@@ -1,0 +1,162 @@
+﻿@page
+@model Hotel.Pages.feedbackModel
+@{
+    ViewData["Title"] = "FeedBack";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .feedback-container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .rating {
+            color: #001524; /* Star color */
+            cursor: pointer;
+        }
+
+        .rating:hover {
+            color: #ffea00; /* Hovered star color */
+        }
+
+        .rated {
+            color: #ffdb58; /* Selected star color */
+        }
+    </style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <div class="container-fluid bg-success py-5 mb-5 bg-feedback">
+        <div class="container py-5">
+            <div class="row justify-content-center py-5">
+                <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="container text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+
+                                <h1 class="text-white heading mb-3">FeedBack</h1>
+                                <li class="text-white"><a class="text-success" href="Index">Home</a> &bullet; FeedBack</li>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (Model.Username1 == null)
+    {
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-success px-3">FeedBack</h6>
+                <h1 class="mb-5">Give US Your FeedBack</h1>
+            </div>
+            <div class="container feedback-container">
+                <br>
+                <h1 class="mb-5 text-center">To Give Us Your Feedback</h1>
+                <h1 class="mb-5 text-center">Login First</h1>
+
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-success px-3">FeedBack</h6>
+                <h1 class="mb-5">Give US Your FeedBack</h1>
+            </div>
+            <div class="container feedback-container">
+                <!-- Star Rating -->
+
+                <h1>
+                    <div id="starRating" class="text-center mb-3">
+                        <label>Your Rate: </label>
+                        <span class="rating" data-rating="1">&#9733;</span>
+                        <span class="rating" data-rating="2">&#9733;</span>
+                        <span class="rating" data-rating="3">&#9733;</span>
+                        <span class="rating" data-rating="4">&#9733;</span>
+                        <span class="rating" data-rating="5">&#9733;</span>
+                    </div>
+                </h1>
+                <!-- Feedback Form -->
+                <form id="feedbackForm" method="post">
+                    <div class="form-group">
+                        @* <label class="form-label mt-1" for="usrename">Your Username:</label>
+                    <input class="form-control mb-2" type="text" asp-for="@Model.username"> *@
+                        <label for="feedback">Your Feedback</label>
+                        @* <input class="form-control mb-2" type="text" asp-for="@Model.feedback"> *@
+                        <textarea class="form-control" id="feedback" rows="5" placeholder="Enter your feedback" type="text" asp-for="@Model.feedback"></textarea>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="1" asp-for="@Model.rate">
+                    <button asp-page-handler="submit" class="btn btn-success btn-block m-3">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    }
+    
+    
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-success px-3">Testimonial</h6>
+                <h1 class="mb-5">Our Clients Say!!!</h1>
+            </div>            
+            <div class="owl-carousel testimonial-carousel position-relative">
+                @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+                {
+                    <div class="testimonial-item bg-white text-center border p-4">
+                        <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/im.png" style="width: 80px; height: 80px;">
+                        <h5 class="mb-0">@Model.Table.Rows[i][0]</h5>
+                        <p>@Model.Table.Rows[i][1]</p>
+                        <p>@Model.Table.Rows[i][2]</p>
+                        <p>Rate: @Model.Table.Rows[i][4] <small class="fa fa-star"></small></p>
+                        <p class="mb-0">
+                            @Model.Table.Rows[i][3]
+                        </p>
+                    </div>
+                }     
+            </div>
+             
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    
+    <script>
+        
+        const stars = document.querySelectorAll('.rating');
+        const ratingInput = document.getElementById('rating');
+
+        stars.forEach((star) => {
+            star.addEventListener('click', () => {
+                const ratingValue = parseInt(star.getAttribute('data-rating'));
+                ratingInput.value = ratingValue;
+
+                stars.forEach((s, index) => {
+                    if (index < ratingValue) {
+                        s.classList.add('rated');
+                    } else {
+                        s.classList.remove('rated');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

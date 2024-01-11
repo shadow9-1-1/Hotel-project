@@ -1,0 +1,123 @@
+﻿@page
+@model Hotel.Pages.roomtypeModel
+@{
+    ViewData["Title"] = "Rooms";
+}
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+<div class="container-fluid bg-success py-5 mb-5 bg-room">
+    <div class="container py-5">
+        <div class="row justify-content-center py-5">
+            <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+
+                            <h1 class="text-white heading mb-3">Our Rooms</h1>
+                            <li class="text-white"><a class="text-success" href="Index">Home</a> &bullet; Rooms</li>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- head End -->
+
+
+
+
+<!-- Room Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Rooms</h6>
+            <h1 class="mb-5">Our Rooms</h1>
+        </div>
+        <div class="row g-4">
+            @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+            {
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="room-item shadow rounded overflow-hidden">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="css/img/@Model.Table.Rows[i][6]" alt="">
+                            <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$@Model.Table.Rows[i][2]/Night</small>
+                        </div>
+                        <div class="p-4 mt-2">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="mb-0">@Model.Table.Rows[i][1]</h5>
+                                <div class="ps-2">
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>@Model.Table.Rows[i][4] Bed</small>
+                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>@Model.Table.Rows[i][5] Bath</small>
+                                <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
+                            </div>
+                            <p class="text-body mb-3">
+                                @Model.Table.Rows[i][3]
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
+                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Room End -->
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Offers</h6>
+            <h1 class="mb-5">Great Offers</h1>
+        </div>
+        <div class="row g-5 justify-content-center">
+             @for (int i = 0; i < @Model.Table1.Rows.Count; i++)
+            {
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="css/img/@Model.Table1.Rows[i][5]" alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>@Model.Table1.Rows[i][1] days</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-success me-2"></i>@Model.Table1.Rows[i][2] Person</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h1 class="mb-0">@Model.Table1.Rows[i][0]</h1>
+                            <h3 class="mb-0">$@Model.Table1.Rows[i][3]</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-success"></small>
+                                <small class="fa fa-star text-success"></small>
+                                <small class="fa fa-star text-success"></small>
+                                <small class="fa fa-star text-success"></small>
+                                <small class="fa fa-star text-success"></small>
+                            </div>
+                            <p>@Model.Table1.Rows[i][4]</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="Error" class="btn btn-sm btn-success px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                <a href="reservation" class="btn btn-sm btn-success px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</div>

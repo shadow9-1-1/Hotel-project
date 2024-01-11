@@ -1,0 +1,89 @@
+﻿@page
+@model Hotel.Pages.StaffModel
+@{
+    ViewData["Title"] = "Staff";
+}
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="text-center">
+    <h1 class="display-4">Welcome, @Model.Username1!</h1>
+    <hr />
+    
+    <br />
+    <p class="text-lg-center fs-3">Reservation Table</p>
+    <p class="text-lg-start fs-3">Total Reservation: @Model.Table7.Rows.Count</p>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Reservation ID</th>
+                <th scope="col">Room Number</th>
+                <th scope="col">User Name</th>
+                <th scope="col">CheckIn Date</th>
+                <th scope="col">CheckOut Date</th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < @Model.Table7.Rows.Count; i++)
+            {
+                <tr>
+
+                    <th scope="row">@(i + 1)</th>
+                    <td>@Model.Table7.Rows[i][0]</td>
+                    <td>@Model.Table7.Rows[i][1]</td>
+                    <td>@Model.Table7.Rows[i][2]</td>
+                    <td>@Model.Table7.Rows[i][3]</td>
+                    <td>@Model.Table7.Rows[i][4]</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+    <hr />
+    <br />
+    <p class="text-lg-center fs-3">Feedback Table</p>
+    <p class="text-lg-start fs-3">Total Feedback: @Model.Table10.Rows.Count</p>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">UserName</th>
+                <th scope="col">FeedbackDate</th>
+                <th scope="col">Comments</th>
+                <th scope="col">Rating</th>
+
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < @Model.Table10.Rows.Count; i++)
+            {
+                <tr>
+
+                    <th scope="row">@(i + 1)</th>
+                    <td>@Model.Table10.Rows[i][1]</td>
+                    <td>@Model.Table10.Rows[i][2]</td>
+                    <td>@Model.Table10.Rows[i][3]</td>
+                    <td>@Model.Table10.Rows[i][4]</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

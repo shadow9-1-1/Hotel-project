@@ -1,0 +1,167 @@
+﻿@page
+@model Hotel.Pages.reservationModel
+@{
+    ViewData["Title"] = "Reservation";
+}
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+<div class="container-fluid bg-success py-5 mb-5 bg-booking">
+    <div class="container py-5">
+        <div class="row justify-content-center py-5">
+            <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            
+                            <h1 class="text-white heading mb-3">Reservation Form</h1>
+                            <li class="text-white"><a class="text-success" href="Index">Home</a> &bullet; Reservation</li>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (@Model.username == null)
+{
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Book Now</h6>
+            <h1 class="mb-5">Book You Room</h1>
+        </div>
+        <div class="container">
+            <div class="booking p-5">
+                <div class="row g-5 align-items-center">
+                    <div class="text-white text-center">
+                        <br><br><br>
+                        <h1 class="text-white mb-4">To Make Reservation</h1>
+                        <h1 class="text-white mb-4">Login First</h1>
+                        <br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}
+else
+{
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Book Now</h6>
+            <h1 class="mb-5">Book You Room</h1>
+        </div>
+        <div class="container">
+            <div class="booking p-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-md-6 text-white">
+                        <h6 class="text-white text-uppercase">Booking</h6>
+                        <h1 class="text-white mb-4">Online Booking</h1>
+                        <p class="mb-4">
+                            Book your stay at our hotel for an unparalleled experience of luxury and comfort.
+                            Secure your reservation now to indulge in exquisite accommodations, impeccable service,
+                            and a memorable stay tailored just for you. Elevate your travel journey by reserving your room today.
+                        </p>
+                        <div class="col-md-5" data-aos="fade-up" data-aos-delay="200">
+                            <div class="row">
+                                <div class="col-md-10 ml-auto contact-info">
+                                    <p><span class="d-white">Address:</span> <span class="text-white"> 123 Street, New York, USA</span></p>
+                                    <p><span class="d-white">Phone:</span> <span class="text-white"> +012 345 67890</span></p>
+                                    <p><span class="d-white">Email:</span> <span class="text-white"> info@example.com</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="btn btn-outline-light py-3 px-5 mt-2" href="about">Read More</a>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="text-white mb-4">Book Now</h1>
+                        <form method="post">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select asp-for="@Model.Room" class="form-select text-light bg-transparent" id="Room" aria-label="Your Room">
+                                            <option class="text-black" selected disabled>Select your Room</option>
+                                            @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+                                            {
+                                                <option class="text-black" value="@Model.Table.Rows[i][1]">@Model.Table.Rows[i][1]</option>
+                                            }
+                                        </select>
+                                        <label for="Room" class="text-light">Your room</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select asp-for="@Model.Servicse" class="form-select text-light bg-transparent" id="Service" aria-label="Your Service">
+                                            <option class="text-black" selected disabled>Select your Service</option>
+                                            <option class="text-black">None</option>
+                                            @for (int i = 0; i < @Model.Table2.Rows.Count; i++)
+                                            {
+                                                <option class="text-black" value="@Model.Table2.Rows[i][1]">@Model.Table2.Rows[i][1]</option>
+                                            }
+                                        </select>
+                                        <label for="Service" class="text-light">Your Service</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date" data-target-input="nearest">
+                                        <input asp-for="@Model.checkin" type="date" class="text-light form-control bg-transparent datetimepicker-input" id="checkIn" placeholder="check In" data-target="#date3" data-toggle="checkInpicker" value="@DateTime.Now" />
+                                        <label for="checkin" class="text-light">check in</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date2" data-target-input="nearest">
+                                        <input asp-for="@Model.checkout" type="date" class="text-light form-control bg-transparent datetimepicker-input" id="checkOut" placeholder="check Out" data-target="#date3" data-toggle="checkOutpicker" value="@DateTime.Now" />
+                                        <label for="checkOut" class="text-light">check Out</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <select asp-for="@Model.RoomN" class="form-select text-light bg-transparent" id="RoomN" aria-label="Your Room">
+                                            <option class="text-black" selected disabled>Select your RoomNumber</option>
+                                            @for (int i = 0; i < @Model.Table1.Rows.Count; i++)
+                                            {
+                                                <option class="text-black" value="@Model.Table1.Rows[i][0]">@Model.Table1.Rows[i][0]</option>
+                                            }
+                                        </select>
+                                        <label for="RoomN" class="text-light">Your room Number</label>
+                                    </div>
+                                </div>
+                                @* <div class="col-md-6">
+                            <div class="form-floating">
+                            <input type="number" class="text-light form-control bg-transparent" id="adults" placeholder="Adults">
+                            <label for="adults" class="text-light">Adults</label>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                            <div class="form-floating">
+                            <input type="number" class="text-light form-control bg-transparent" id="children" placeholder="Children">
+                            <label for="children" class="text-light">Children</label>
+                            </div>
+                            </div>
+                            <div class="col-12">
+                            <div class="form-floating">
+                            <textarea class="text-light form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                            <label for="message" class="text-light">Special Request</label>
+                            </div>
+                            </div> *@
+                                <div class="col-12">
+                                    <button asp-page-handler="submit" class="btn btn-outline-light w-100 py-3">Book Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking end -->
+    
+}
+<!-- Booking Start -->

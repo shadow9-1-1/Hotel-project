@@ -1,0 +1,32 @@
+﻿@page
+@model Hotel.Pages.UpdatedataModel
+@{
+    ViewData["Title"] = "Update";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="text-left">
+    <br />
+    <h1 class="text-lg-center fs-5">Update your Data</h1>
+    <form method="post">
+        <label class="form-label " for="ID">Username:</label>
+        <input class="form-control mb-2" type="text" value="@Model.Table.Rows[0][0]" readonly>
+
+        <label class="form-label mt-1" for="name,">Name:</label>
+        <input class="form-control mb-2" type="text" value="@Model.Table.Rows[0][2]" asp-for="@Model.name">
+
+        <label class="form-label mt-1" for="email,">Email:</label>
+        <input class="form-control mb-2" type="email" value="@Model.Table.Rows[0][3]" asp-for="@Model.email">
+
+        <label class="form-label mt-1" for="name,">Password:</label>
+        <input class="form-control mb-2" type="password" value="@Model.Table.Rows[0][1]" asp-for="@Model.password">
+
+        <button asp-page-handler="submit" class="btn btn-success mt-2">Update</button>
+        <button asp-page-handler="cancel" class="btn btn-outline-secondary mt-2">Cancel</button>
+    </form>
+
+</div>

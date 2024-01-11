@@ -1,0 +1,58 @@
+﻿@page
+@model Hotel.Pages.AddStaffModel
+@{
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="text-left">
+    <br />
+    <h1 class="text-lg-center fs-5">Add Staff</h1>
+    <form method="post">
+        <label class="form-label " for="ID">Username:</label>
+        <input class="form-control mb-2" type="text" asp-for="@Model.username">
+
+        <label class="form-label mt-1" for="name,">Name:</label>
+        <input class="form-control mb-2" type="text" asp-for="@Model.name">
+
+
+
+        <label class="form-label mt-1" for="name,">Password:</label>
+        <input class="form-control mb-2" type="password" asp-for="@Model.password">
+
+        <label class="form-label mt-1" for="name,">Role:</label>
+        <select asp-for="@Model.Role" class="form-select text-black bg-transparent">
+            <option class="text-black" selected disabled>Select Role</option>
+            @for (int i = 0; i < @Model.Table3.Rows.Count; i++)
+            {
+                <option class="text-black" value="@Model.Table3.Rows[i][0]">@Model.Table3.Rows[i][0]</option>
+            }
+        </select>
+
+        <label class="form-label mt-1" for="name,">Manager:</label>
+        <select asp-for="@Model.manager" class="form-select text-black bg-transparent">
+            <option class="text-black" selected disabled>Select Manager</option>
+            @for (int i = 0; i < @Model.Table2.Rows.Count; i++)
+            {
+                <option class="text-black" value="@Model.Table2.Rows[i][0]">@Model.Table2.Rows[i][0]</option>
+            }
+        </select>
+
+        <label class="form-label mt-1" for="name,">Admin:</label>
+        <select asp-for="@Model.Admin" class="form-select text-black bg-transparent">
+            <option class="text-black" selected disabled>Select Admin</option>
+            @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+            {
+                <option class="text-black" value="@Model.Table.Rows[i][0]">@Model.Table.Rows[i][0]</option>
+            }
+        </select>
+
+        <button asp-page-handler="submit" class="btn btn-success mt-2">Add</button>
+        <button asp-page-handler="cancel" class="btn btn-outline-secondary mt-2">Cancel</button>
+    </form>
+
+</div>

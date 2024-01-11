@@ -1,0 +1,481 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+<div class="container-fluid bg-success py-5 mb-5 hero-header">
+     <div class="container py-5" >
+        <div class="row justify-content-center py-5">
+            <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Enjoy Your Stay With Us</h1>
+                <p class="fs-4 text-white mb-4 animated slideInDown">In Your Home Away from Home</p>
+                <div class="position-relative w-75 mx-auto animated slideInDown">
+                    <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Single Room">
+                    <button type="button" class="btn btn-success rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Navbar & Hero End -->
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="img-fluid position-absolute w-100 h-100" src="~/css/img/aboutUs.jpg" alt="" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h6 class="section-title bg-white text-start text-success pe-3">About Us</h6>
+                <h1 class="mb-4">Welcome to <span class="text-success">Infinity</span></h1>
+                <p class="mb-4">Welcome to Infinity, where luxury meets innovation. As a premier hospitality destination, 
+                    we pride ourselves on delivering an unparalleled guest experience. Our commitment to excellence is reflected 
+                    in our state-of-the-art facilities, exquisite design, and top-notch services. With a strategic location and a 
+                    focus on sustainability, we are poised for continued growth and success in the dynamic hospitality industry. 
+                    Join us on this journey as we redefine luxury and set new standards for hospitality.</p>
+                
+                <div class="row gy-2 gx-4 mb-4">
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>Prime Properties</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>Unmatched Elegance</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>Top-Tier Service</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>Latest Model Vehicles</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>5 Star</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>24/7 Service</p>
+                    </div>
+                </div>
+                <a class="btn btn-success py-3 px-5 mt-2" href="about">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+<!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Services</h6>
+            <h1 class="mb-5">Our Services</h1>
+        </div>
+        <div class="row g-4">
+            @for (int i = 0; i < @Model.Table1.Rows.Count; i++)
+            {
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-@Model.Table1.Rows[i][5] fa-2x text-success mb-4"></i>
+                            <h5>@Model.Table1.Rows[i][1]</h5>
+                            <p>@Model.Table1.Rows[i][2]</p><br />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+<!-- Room Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Rooms</h6>
+            <h1 class="mb-5">Some Of Our Rooms</h1>
+        </div>
+        <div class="row g-4">
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="room-item shadow rounded overflow-hidden">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="css/img/@Model.Table2.Rows[i][6]" alt="">
+                            <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$@Model.Table2.Rows[i][2]/Night</small>
+                        </div>
+                        <div class="p-4 mt-2">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="mb-0">@Model.Table2.Rows[i][1]</h5>
+                                <div class="ps-2">
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>@Model.Table2.Rows[i][4] Bed</small>
+                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>@Model.Table2.Rows[i][5] Bath</small>
+                                <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
+                            </div>
+                            <p class="text-body mb-3">
+                                @Model.Table2.Rows[i][3]
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
+                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+        </div>
+        
+    </div>
+    
+</div>
+<!-- Room End -->
+
+<!-- Destination Start -->
+<div class="container-xxl py-5 destination">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Photo</h6>
+            <h1 class="mb-5">Some Of Our Popular Photo</h1>
+        </div>
+        <div class="row g-3">
+            <div class="col-lg-7 col-md-6">
+                <div class="row g-3">
+                    <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                        <a class="position-relative d-block overflow-hidden" href="">
+                            <img class="img-fluid" src="css/img/galare2.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                        <a class="position-relative d-block overflow-hidden" href="">
+                            <img class="img-fluid" src="css/img/destination-2.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                        <a class="position-relative d-block overflow-hidden" href="">
+                            <img class="img-fluid" src="css/img/destination-3.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+                <a class="position-relative d-block h-100 overflow-hidden" href="">
+                    <img class="img-fluid position-absolute w-100 h-100" src="css/img/galare1.jpg" alt="" style="object-fit: cover;">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Destination Start -->
+<!-- Package Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Packages</h6>
+            <h1 class="mb-5">Awesome Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="package-item">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="css/img/package-1.jpg" alt="">
+                    </div>
+                    <div class="d-flex border-bottom">
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-success me-2"></i>Ocean</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>1 days</small>
+                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-success me-2"></i>1 Person</small>
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="mb-0">$100.00</h3>
+                        <div class="mb-3">
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                        </div>
+                        <p>Glide through waves, discover marine wonders, create memories. Join us for a brief, enchanting adventure at sea</p><br />
+                        <div class="d-flex justify-content-center mb-2">
+                            <a href="#" class="btn btn-sm btn-success px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                            <a href="#" class="btn btn-sm btn-success px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="package-item">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="css/img/package-2.jpg" alt="">
+                    </div>
+                    <div class="d-flex border-bottom">
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-success me-2"></i>Mountains</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>1 days</small>
+                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-success me-2"></i>1 Person</small>
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="mb-0">$75.00</h3>
+                        <div class="mb-3">
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                        </div>
+                        <p>Ascend to new heights with our thrilling climbing experiences. Conquer peaks, embrace challenges, and savor breathtaking views. Join us for an exhilarating journey upward.</p>                        
+                        <div class="d-flex justify-content-center mb-2">
+                            <a href="#" class="btn btn-sm btn-success px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                            <a href="#" class="btn btn-sm btn-success px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="package-item">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="css/img/package-3.jpg" alt="">
+                    </div>
+                    <div class="d-flex border-bottom">
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-success me-2"></i>Rowing</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>1 days</small>
+                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-success me-2"></i>1 Person</small>
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="mb-0">$150.00</h3>
+                        <div class="mb-3">
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                            <small class="fa fa-star text-success"></small>
+                        </div>
+                        <p>Glide, rhythm, tranquility—a unique blend of fitness and nature's beauty. Join us for an invigorating experience on the water</p><br />
+                        <div class="d-flex justify-content-center mb-2">
+                            <a href="#" class="btn btn-sm btn-success px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                            <a href="#" class="btn btn-sm btn-success px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Package End -->
+<!-- Booking Start -->
+@* <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="booking p-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6 text-white">
+                    <h6 class="text-white text-uppercase">Booking</h6>
+                    <h1 class="text-white mb-4">Online Booking</h1>
+                    <p class="mb-4">
+                        Book your stay at our hotel for an unparalleled experience of luxury and comfort. Secure your reservation now to indulge in exquisite accommodations, impeccable service, and a memorable stay tailored just for you. Elevate your travel journey by reserving your room today.
+                    </p>
+                    <a class="btn btn-outline-light py-3 px-5 mt-2" href="">Read More</a>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="text-white mb-4">Book Now</h1>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="text-light form-control bg-transparent" id="name" placeholder="Your Name">
+                                    <label for="name" class="text-light">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="text-light form-control bg-transparent" id="email" placeholder="Your Email">
+                                    <label for="email" class="text-light">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating date" id="date3" data-target-input="nearest">
+                                    <input type="text" class="text-light form-control bg-transparent datetimepicker-input" id="checkIn" placeholder="check In" data-target="#date3" data-toggle="checkInpicker" />
+                                    <label for="chickin" class="text-light">check in</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating date" id="date3" data-target-input="nearest">
+                                    <input type="text" class="text-light form-control bg-transparent datetimepicker-input" id="checkOut" placeholder="check Out" data-target="#date3" data-toggle="checkOutpicker" />
+                                    <label for="checkOut" class="text-light">check Out</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="text-light form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                    <label for="message" class="text-light">Special Request</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *@
+<!-- Booking end -->
+<!-- Process Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Process</h6>
+            <h1 class="mb-5">3 Easy Steps</h1>
+        </div>
+        <div class="row gy-5 gx-4 justify-content-center">
+            <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="position-relative border border-success pt-5 pb-4 px-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-success rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                        <i class="fa fa-check fa-3x text-white"></i>
+                    </div>
+                    <h5 class="mt-4">Choose A Room</h5>
+                    <hr class="w-25 mx-auto bg-success mb-1">
+                    <hr class="w-50 mx-auto bg-success mt-0">
+                    <p class="mb-0">Choose your preferred room for your stay</p><br />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="position-relative border border-success pt-5 pb-4 px-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-success rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                        <i class="fa fa-dollar-sign fa-3x text-white"></i>
+                    </div>
+                    <h5 class="mt-4">Pay Online</h5>
+                    <hr class="w-25 mx-auto bg-success mb-1">
+                    <hr class="w-50 mx-auto bg-success mt-0">
+                    <p class="mb-0">Securely pay online for a seamless transaction</p><br />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="position-relative border border-success pt-5 pb-4 px-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-success rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                        <i class="fa fa-car fa-3x text-white"></i>
+                    </div>
+                    <h5 class="mt-4">Enjoy Now</h5>
+                    <hr class="w-25 mx-auto bg-success mb-1">
+                    <hr class="w-50 mx-auto bg-success mt-0">
+                    <p class="mb-0">Indulge in the pleasures of your chosen accommodation instantly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Process Start -->
+<!-- Team Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-success px-3">Guest Guide</h6>
+            <h1 class="mb-5">Meet Our Guide</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="css/img/team-1.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">James Anderson</h5>
+                        <small>Concierge Specialist</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="css/img/team-2.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Sophia Chang</h5>
+                        <small>Front Desk Associate</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="css/img/team-3.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Alex Thompson</h5>
+                        <small>Hospitality Coordinator</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="css/img/team-4.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Olivia Rodriguez</h5>
+                        <small>Guest Relations Manager</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+<!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-success px-3">Testimonial</h6>
+            <h1 class="mb-5">Our Clients Say!!!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+            {
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/im.png" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">@Model.Table.Rows[i][0]</h5>
+                    <p>@Model.Table.Rows[i][1]</p>
+                    <p>@Model.Table.Rows[i][2]</p>
+                    <p>Rate: @Model.Table.Rows[i][4] <small class="fa fa-star"></small></p>
+                    <p class="mb-0">
+                        @Model.Table.Rows[i][3]
+                    </p>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+<!-- Testimonial End -->

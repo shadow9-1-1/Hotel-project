@@ -1,0 +1,129 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Hotel
+build_property.RootNamespace = Hotel
+build_property.ProjectDir = C:\Users\ahmed\source\repos\Hotel\Hotel\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ahmed\source\repos\Hotel\Hotel
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/about.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/AddAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/AddManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkTWFuYWdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/AddRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUm9vbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/AddRoomType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUm9vbVR5cGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/AddServes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU2VydmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/AddStaff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU3RhZmYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/event.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZXZlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/feedback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmVlZGJhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Login SingUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4gU2luZ1VwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/loginHE.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbG9naW5IRS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Manager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/reservation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmVzZXJ2YXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/ReservationHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25IaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/roomtype.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccm9vbXR5cGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/service.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2VydmljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2lnbnVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Staff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhZmYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Updatedata.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlZGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Userpage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahmed/source/repos/Hotel/Hotel/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ktgf2noc40
