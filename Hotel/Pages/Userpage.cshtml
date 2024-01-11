@@ -1,0 +1,65 @@
+﻿@page
+@model Hotel.Pages.UserpageModel
+@{
+    ViewData["Title"] = "User page";
+}
+@* <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="text-center">
+    <h1 class="mb-2">Welcome, @Model.Username!</h1>
+    <div>
+        <button class="btn btn-primary" onclick="location.href='UpdateUserData'">Update Data</button>
+        <button class="btn btn-info" onclick="location.href='ReservationHistory'">View Reservation History</button>
+    </div>
+</div> *@
+
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+
+
+        .locontainer {
+            max-width: 400px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="locontainer">
+        <form method="post">
+            <hr>
+            <h1 class="mb-2">Welcome, @Model.Username1!</h1>
+            <hr>
+            <button asp-page-handler="submit" class="btn btn-success mt-2">Update Data</button>
+            <button asp-page-handler="submit1" class="btn btn-success mt-2">View Reservation History</button>
+            <button asp-page-handler="submit2" class="btn btn-success mt-2" >Give US Your FeedBack</button>
+            <button asp-page-handler="submit3" class="btn btn-success mt-2" >Make Reservation</button>
+            <hr>
+        </form>
+        @* <hr>
+        <h1 class="mb-2">Welcome, @Model.Username!</h1>
+        <button asp-page-handler="submit" class="btn btn-success mt-2">Update Data</button>
+        <button asp-page-handler="submit1" class="btn btn-success mt-2">View Reservation History</button>
+        <hr> *@
+        
+    </div>
+
+</body>
+</html>

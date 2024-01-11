@@ -1,0 +1,42 @@
+﻿@page
+@model Hotel.Pages.AddRoomModel
+@{
+    ViewData["Title"] = "Add Room";
+}
+
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="text-left">
+    <br />
+    <h1 class="text-lg-center fs-5">Add Serves</h1>
+    <form method="post">
+        <label class="form-label " for="ID">Room Number:</label>
+        <input class="form-control mb-2" type="text" asp-for="@Model.Roomn">\
+
+        <label class="form-label mt-1" for="name,">CategoryName:</label>
+        <select asp-for="@Model.CategoryName" class="form-select text-black bg-transparent">
+            <option class="text-black" selected disabled>Select your Room</option>
+            @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+            {
+                <option class="text-black" value="@Model.Table.Rows[i][1]">@Model.Table.Rows[i][1]</option>
+            }
+        </select>
+
+        <label class="form-label mt-1" for="name,">Price:</label>
+        <input class="form-control mb-2" type="number" asp-for="@Model.Price">
+
+        <button asp-page-handler="submit" class="btn btn-success mt-2">Add</button>
+        <button asp-page-handler="cancel" class="btn btn-outline-secondary mt-2">Cancel</button>
+    </form>
+
+</div>

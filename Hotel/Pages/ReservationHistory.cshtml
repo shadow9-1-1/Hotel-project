@@ -1,0 +1,42 @@
+﻿@page
+@model Hotel.Pages.ReservationHistoryModel
+@{
+    ViewData["Title"] = "Reservation History";
+}
+<br />
+<br />
+<br />
+<br />
+<div class="text-center">
+    <h1 class="display-4">Welcome, @Model.Username1!</h1>
+    <p class="text-lg-start fs-3">Total Reservation: @Model.Table.Rows.Count</p>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ReservationID</th>
+                <th scope="col">RoomNumber</th>
+                <th scope="col">CheckInDate</th>
+                <th scope="col">CheckOutDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+            {
+                <tr>
+
+                    <th scope="row">@(i + 1)</th>
+                    <td>@Model.Table.Rows[i][0]</td>
+                    <td>@Model.Table.Rows[i][1]</td>
+                    <td>@Model.Table.Rows[i][3]</td>
+                    <td>@Model.Table.Rows[i][4]</td>
+                    @* @for (int j = 0; j < Model.Table.Columns.Count; j++)
+                    {
+                        <td>@Model.Table.Rows[i][j]</td>
+                    } *@
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

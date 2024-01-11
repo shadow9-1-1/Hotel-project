@@ -37,61 +37,21 @@
             <h1 class="mb-5">Our Services</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-hotel fa-2x text-success mb-4"></i>
-                        <h5>Rooms & Apartments</h5>
-                        <p>Stylish comfort awaits in our rooms and apartments — modern retreats designed for an unforgettable stay.</p><br />
+            @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+            {
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-@Model.Table.Rows[i][5] fa-2x text-success mb-4"></i>
+                            <h5>@Model.Table.Rows[i][1]</h5>
+                            <p>@Model.Table.Rows[i][2]</p><br />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-utensils text-success mb-4"></i>
-                        <h5>Food & Restaurant:</h5>
-                        <p>Indulge in culinary excellence at our restaurant, where each dish is a masterpiece, and every meal is an experience.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-spa text-success mb-4"></i>
-                        <h5>Spa & Fitness</h5>
-                        <p>Discover tranquility in our spa and energize at our fitness center — a perfect blend of relaxation and rejuvenation.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-swimmer text-success mb-4"></i>
-                        <h5>Sports & Gaming</h5>
-                        <p>Thrill-seekers, rejoice! Experience adrenaline highs in our sports and gaming arena for non-stop excitement.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-glass-cheers text-success mb-4"></i>
-                        <h5>Events & Party</h5>
-                        <p>Celebrate life's moments with us. Our versatile event spaces set the scene for unforgettable gatherings and parties.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-dumbbell text-success mb-4"></i>
-                        <h5>GYM & Yoga</h5>
-                        <p>Elevate your well-being in our fitness haven. From invigorating workouts to serene yoga, find balance and vitality here.</p>
-                    </div>
-                </div>
-            </div>
-
+            }
+        </div>
+        <div class="text-center wow fadeInUp" data-wow-delay="0.3s">
+            <a class="btn btn-success py-3 px-5 mt-4 center" href="reservation">Book Now</a>
         </div>
     </div>
 </div>

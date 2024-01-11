@@ -56,43 +56,57 @@
             </div>
         </div>
     </div>
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-success px-3">FeedBack</h6>
-            <h1 class="mb-5">Give US Your FeedBack</h1>
-        </div>
-        <div class="container feedback-container">
-            <!-- Star Rating -->
+    @if (Model.Username1 == null)
+    {
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-success px-3">FeedBack</h6>
+                <h1 class="mb-5">Give US Your FeedBack</h1>
+            </div>
+            <div class="container feedback-container">
+                <br>
+                <h1 class="mb-5 text-center">To Give Us Your Feedback</h1>
+                <h1 class="mb-5 text-center">Login First</h1>
 
-            <h1>
-                <div id="starRating" class="text-center mb-3">
-                    <label>Your Rate: </label>
-                    <span class="rating" data-rating="1">&#9733;</span>
-                    <span class="rating" data-rating="2">&#9733;</span>
-                    <span class="rating" data-rating="3">&#9733;</span>
-                    <span class="rating" data-rating="4">&#9733;</span>
-                    <span class="rating" data-rating="5">&#9733;</span>
-                </div>
-            </h1>
-            <!-- Feedback Form -->
-            <form id="feedbackForm">
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="feedback">Your Feedback</label>
-                    <textarea class="form-control" id="feedback" rows="5" placeholder="Enter your feedback" required></textarea>
-                </div>
-                <input type="hidden" id="rating" name="rating" value="1">
-                <button type="submit" class="btn btn-success btn-block m-3">Submit Feedback</button>
-            </form>
+            </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-success px-3">FeedBack</h6>
+                <h1 class="mb-5">Give US Your FeedBack</h1>
+            </div>
+            <div class="container feedback-container">
+                <!-- Star Rating -->
+
+                <h1>
+                    <div id="starRating" class="text-center mb-3">
+                        <label>Your Rate: </label>
+                        <span class="rating" data-rating="1">&#9733;</span>
+                        <span class="rating" data-rating="2">&#9733;</span>
+                        <span class="rating" data-rating="3">&#9733;</span>
+                        <span class="rating" data-rating="4">&#9733;</span>
+                        <span class="rating" data-rating="5">&#9733;</span>
+                    </div>
+                </h1>
+                <!-- Feedback Form -->
+                <form id="feedbackForm" method="post">
+                    <div class="form-group">
+                        @* <label class="form-label mt-1" for="usrename">Your Username:</label>
+                    <input class="form-control mb-2" type="text" asp-for="@Model.username"> *@
+                        <label for="feedback">Your Feedback</label>
+                        @* <input class="form-control mb-2" type="text" asp-for="@Model.feedback"> *@
+                        <textarea class="form-control" id="feedback" rows="5" placeholder="Enter your feedback" type="text" asp-for="@Model.feedback"></textarea>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="1" asp-for="@Model.rate">
+                    <button asp-page-handler="submit" class="btn btn-success btn-block m-3">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    }
+    
     
     <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -100,45 +114,23 @@
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-success px-3">Testimonial</h6>
                 <h1 class="mb-5">Our Clients Say!!!</h1>
-            </div>
+            </div>            
             <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Emily Johnson</h5>
-                    <p>New York, USA</p>
-                    <p class="mb-0">
-                        Our recent stay at the hotel was a perfect blend of comfort and luxury. The well-appointed rooms, delicious dining options,
-                        and friendly staff contributed to a relaxing and enjoyable getaway. We can't wait to revisit!
-                    </p>
-                </div>
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John Doe</h5>
-                    <p>Cairo, Egypt</p>
-                    <p class="mt-2 mb-0">
-                        The hotel's staff went above and beyond to make our stay memorable. The personalized service, combined with the
-                        luxurious accommodations, created a truly unforgettable experience. Thank you for making our visit special.
-                    </p>
-                </div>
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Tom Hanks</h5>
-                    <p>Los Angeles, USA</p>
-                    <p class="mt-2 mb-0">
-                        The hotel's attention to detail and commitment to guest satisfaction are truly commendable.
-                        From the welcoming ambiance to the top-notch amenities, our stay was delightful. We look forward to returning in the future.
-                    </p>
-                </div>
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Marilyn Monroe</h5>
-                    <p>Moscow, Russia</p>
-                    <p class="mt-2 mb-0">
-                        Our stay at the hotel exceeded all expectations. The rooms were impeccably clean, the staff was incredibly
-                        courteous, and the overall experience was nothing short of exceptional. Highly recommended!
-                    </p>
-                </div>
+                @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+                {
+                    <div class="testimonial-item bg-white text-center border p-4">
+                        <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="css/img/im.png" style="width: 80px; height: 80px;">
+                        <h5 class="mb-0">@Model.Table.Rows[i][0]</h5>
+                        <p>@Model.Table.Rows[i][1]</p>
+                        <p>@Model.Table.Rows[i][2]</p>
+                        <p>Rate: @Model.Table.Rows[i][4] <small class="fa fa-star"></small></p>
+                        <p class="mb-0">
+                            @Model.Table.Rows[i][3]
+                        </p>
+                    </div>
+                }     
             </div>
+             
         </div>
     </div>
     <!-- Testimonial End -->

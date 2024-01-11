@@ -40,297 +40,41 @@
             <h1 class="mb-5">Our Rooms</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/img_1.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$89/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Single Room</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
+            @for (int i = 0; i < @Model.Table.Rows.Count; i++)
+            {
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="room-item shadow rounded overflow-hidden">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="css/img/@Model.Table.Rows[i][6]" alt="">
+                            <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$@Model.Table.Rows[i][2]/Night</small>
+                        </div>
+                        <div class="p-4 mt-2">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="mb-0">@Model.Table.Rows[i][1]</h5>
+                                <div class="ps-2">
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                    <small class="fa fa-star text-success"></small>
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>1 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>1 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">
-                            Cozy retreat for solo travelers. Comfortable twin bed, modern amenities, and a functional workspace for a convenient stay.
-                        </p><br /><br />
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
+                            <div class="d-flex mb-3">
+                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>@Model.Table.Rows[i][4] Bed</small>
+                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>@Model.Table.Rows[i][5] Bath</small>
+                                <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
+                            </div>
+                            <p class="text-body mb-3">
+                                @Model.Table.Rows[i][3]
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
+                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/img_2.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$109/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Double Room</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>1 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>1 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">
-                            Perfect for pairs! Our Double Room features a cozy ambiance with a double bed, modern amenities, and a relaxing atmosphere for a comfortable stay
-                        </p><br />
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/Family Room.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$149/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Family Room</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>2 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">
-                            Spacious and family-friendly. King-sized bed for parents, bunk beds for the kids. Enjoy a flat-screen TV, kitchenette, and a comfortable space for everyone to relax.
-                        </p><br />
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/Business Room.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$129/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Business Room</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>1 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>1 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">
-                            Designed for productivity! The Business Room offers a dedicated workspace, high-speed Wi-Fi, and modern conveniences. Ideal for business travelers seeking comfort and efficiency
-                        </p><br /><br />
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/Adjoining Rooms.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$179/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Adjoining Rooms</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>2 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">
-                            Connect and stay close. Our Adjoining Rooms provide the flexibility of separate spaces while keeping you connected to your travel companions. Perfect for families or group travelers.
-                        </p><br />
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/Penthouse Suite.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$249/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Penthouse Suite</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>3 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">
-                            Experience the epitome of luxury in our Penthouse Suite. Enjoy breathtaking views, a private terrace, and exclusive amenities. Unwind in style and sophistication.
-                        </p><br /><br />
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/room-1.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$299/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Junior Suite</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>2 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">
-                            A spacious and elegant room designed for comfort and relaxation. Features a king-sized bed,
-                            a luxurious bathroom, and a city view.
-                        </p><br />
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/room-2.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$349/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Executive Suite</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>2 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">
-                            Experience luxury in our Executive Suite. This room offers three beds, two baths,
-                            and complimentary Wi-Fi. Enjoy a five-star stay with top-notch amenities.
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="room-item shadow rounded overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="css/img/room-3.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-success text-white rounded py-1 px-3 ms-4">$399/Night</small>
-                    </div>
-                    <div class="p-4 mt-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Super Deluxe</h5>
-                            <div class="ps-2">
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                                <small class="fa fa-star text-success"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-success me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-success me-2"></i>2 Bath</small>
-                            <small><i class="fa fa-wifi text-success me-2"></i>Wifi</small>
-                        </div>
-                        <p class="text-body mb-3">
-                            Indulge in our Super Deluxe room, boasting three comfortable beds, two baths, and seamless Wi-Fi connectivity.
-                            Enjoy a stylish stay with a touch of sophistication.
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-success rounded py-2 px-4" href="Error">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="reservation">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>
@@ -343,61 +87,37 @@
             <h1 class="mb-5">Great Offers</h1>
         </div>
         <div class="row g-5 justify-content-center">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="package-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="css/img/Family Room.jpg" alt="">
-                    </div>
-                    <div class="d-flex border-bottom">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-success me-2"></i>4 Person</small>
-                    </div>
-                    <div class="text-center p-4">
-                        <h3 class="mb-0">$129.00</h3>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-success"></small>
-                            <small class="fa fa-star text-success"></small>
-                            <small class="fa fa-star text-success"></small>
-                            <small class="fa fa-star text-success"></small>
-                            <small class="fa fa-star text-success"></small>
+             @for (int i = 0; i < @Model.Table1.Rows.Count; i++)
+            {
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="css/img/@Model.Table1.Rows[i][5]" alt="">
                         </div>
-                        <p>Spacious and family-friendly. King-sized bed for parents, bunk beds for the kids. 
-                            Enjoy a flat-screen TV, kitchenette, and a comfortable space for everyone to relax.</p>
-                        <div class="d-flex justify-content-center mb-2">
-                            <a href="Error" class="btn btn-sm btn-success px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                            <a href="reservation" class="btn btn-sm btn-success px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>@Model.Table1.Rows[i][1] days</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-success me-2"></i>@Model.Table1.Rows[i][2] Person</small>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="package-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="css/img/img_1.jpg" alt="">
-                    </div>
-                    <div class="d-flex border-bottom">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-success me-2"></i>5 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-success me-2"></i>1 Person</small>
-                    </div>
-                    <div class="text-center p-4">
-                        <h3 class="mb-0">$64.00</h3>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-success"></small>
-                            <small class="fa fa-star text-success"></small>
-                            <small class="fa fa-star text-success"></small>
-                            <small class="fa fa-star text-success"></small>
-                            <small class="fa fa-star text-success"></small>
-                        </div>
-                        <p>
-                            Cozy retreat for solo travelers. Comfortable twin bed, modern amenities, and a functional workspace for a convenient stay.
-                        </p><br />
-                        <div class="d-flex justify-content-center mb-2">
-                            <a href="Error" class="btn btn-sm btn-success px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                            <a href="reservation" class="btn btn-sm btn-success px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                        <div class="text-center p-4">
+                            <h1 class="mb-0">@Model.Table1.Rows[i][0]</h1>
+                            <h3 class="mb-0">$@Model.Table1.Rows[i][3]</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-success"></small>
+                                <small class="fa fa-star text-success"></small>
+                                <small class="fa fa-star text-success"></small>
+                                <small class="fa fa-star text-success"></small>
+                                <small class="fa fa-star text-success"></small>
+                            </div>
+                            <p>@Model.Table1.Rows[i][4]</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="Error" class="btn btn-sm btn-success px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                <a href="reservation" class="btn btn-sm btn-success px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
+            
         </div>
     </div>
 </div>

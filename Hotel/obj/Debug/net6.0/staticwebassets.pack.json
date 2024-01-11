@@ -101,6 +101,10 @@
       "PackagePath": "staticwebassets\\css\\img\\hotel.png"
     },
     {
+      "Id": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\css\\img\\im.png",
+      "PackagePath": "staticwebassets\\css\\img\\im.png"
+    },
+    {
       "Id": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\css\\img\\image_5.jpg",
       "PackagePath": "staticwebassets\\css\\img\\image_5.jpg"
     },
@@ -111,6 +115,10 @@
     {
       "Id": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\css\\img\\image_7.jpg",
       "PackagePath": "staticwebassets\\css\\img\\image_7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\css\\img\\img.jpg",
+      "PackagePath": "staticwebassets\\css\\img\\img.jpg"
     },
     {
       "Id": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\css\\img\\img_1.jpg",

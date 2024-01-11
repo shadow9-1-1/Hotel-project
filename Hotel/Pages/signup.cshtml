@@ -29,28 +29,48 @@
 <body>
 
     <div class="locontainer">
+        @if (!string.IsNullOrEmpty(Model.UserError))
+        {
+            <div class="alert alert-danger" role="alert">
+                @Model.UserError
+            </div>
+        }
         
         <hr>
 
         <!-- Sign Up Form -->
-        <form id="signupForm">
+        <form id="signupForm" method="post">
             <h2 class="text-center mb-4">Sign Up</h2>
             <div class="form-group">
-                <label for="signupName">Full Name</label>
-                <input type="text" class="form-control" id="signupName" placeholder="Enter your full name" required>
+                <label class="form-label mt-1" for="Usrename">Username:</label>
+                <input class="form-control mb-2" type="text" asp-for="@Model.Username">
+                <span asp-validation-for="@Model.Username" class="text-danger"></span>
+                <span asp-validation-for="Username" class="text-danger"></span>
+                
             </div>
             <div class="form-group">
-                <label for="signupEmail">Email address</label>
-                <input type="email" class="form-control" id="signupEmail" placeholder="Enter email" required>
+                <label class="form-label mt-1" for="name,">Name:</label>
+                <input class="form-control mb-2" type="text" asp-for="@Model.Name">
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label for="signupPassword">Password</label>
-                <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
+                <label class="form-label mt-1" for="email,">Email:</label>
+                <input class="form-control mb-2" type="email" asp-for="@Model.Email">
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                
             </div>
-            <button type="submit" class="btn btn-success btn-block">Sign Up</button>
-        </form>
+            <div class="form-group">
+                <label class="form-label mt-1" for="password,">password:</label>
+                <input class="form-control mb-2" type="password" asp-for="@Model.Password">
+                <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                
+            </div>
+            <button asp-page-handler="submit" class="btn btn-success mt-2">Sign Up</button>
+            
+        </form> 
+        
         <hr>
-        <label class="text-right">Already  Have Account?! <a class="text-primary" href="Login SingUp"><u>LogIn.</u></a></label>
+        <label class="text-right">Already Have Account?! <a class="text-primary" href="Login SingUp"><u>LogIn.</u></a></label>
         <hr>
     </div>
     

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Za8SEfDUrrX6zi23KiJ0Dg8xQbf+x2N+gN99okgKhSY=",
+  "Hash": "p/yh7Q7R+/6AAVhSaeI3oTOX/63rBYQfon0Qgr8ViZE=",
   "Source": "Hotel",
   "BasePath": "_content/Hotel",
   "Mode": "Default",
@@ -425,6 +425,23 @@
       "OriginalItemSpec": "wwwroot\\css\\img\\hotel.png"
     },
     {
+      "Identity": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\css\\img\\im.png",
+      "SourceId": "Hotel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\",
+      "BasePath": "_content/Hotel",
+      "RelativePath": "css/img/im.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\img\\im.png"
+    },
+    {
       "Identity": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\css\\img\\image_5.jpg",
       "SourceId": "Hotel",
       "SourceType": "Discovered",
@@ -474,6 +491,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\img\\image_7.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\css\\img\\img.jpg",
+      "SourceId": "Hotel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\",
+      "BasePath": "_content/Hotel",
+      "RelativePath": "css/img/img.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\img\\img.jpg"
     },
     {
       "Identity": "C:\\Users\\ahmed\\source\\repos\\Hotel\\Hotel\\wwwroot\\css\\img\\img_1.jpg",
